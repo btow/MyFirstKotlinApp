@@ -8,7 +8,7 @@
     tools:context="com.example.bobkov_vv.my_first_kotlin_app.MainActivity">
 
     <TextView
-        android:id="@+id/tvCount"
+        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
@@ -30,7 +30,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCount" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResult" />
 
     <Button
         android:id="@+id/btnCount"
@@ -43,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnRandom"
         app:layout_constraintStart_toEndOf="@+id/btnToast"
-        app:layout_constraintTop_toBottomOf="@+id/tvCount"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"/>
 
     <Button
         android:id="@+id/btnRandom"
@@ -54,6 +54,6 @@
         android:text="@string/random"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCount"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"/>
 
 </android.support.constraint.ConstraintLayout>
