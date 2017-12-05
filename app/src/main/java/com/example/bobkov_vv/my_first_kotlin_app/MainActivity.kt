@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toInitializeView()
+        toInitializeView(savedInstanceState)
         setOnClicLlistenersOnTheView()
     }
 
@@ -26,18 +26,20 @@ class MainActivity : AppCompatActivity() {
         btnToast.setOnClickListener {
             Toast.makeText(this, tvResult.text, Toast.LENGTH_SHORT).show()
         }
-        btnCount.setOnClickListener{
+        btnCount.setOnClickListener {
             var count: Double = (tvResult.text).toString().toDouble()
             tvResult.text = (++count).toString()
         }
-        btnRandom.setOnClickListener{
+        btnRandom.setOnClickListener {
             var random: Double = Math.random()
             tvResult.text = random.toString()
         }
     }
 
-    private fun toInitializeView() {
+    private fun toInitializeView(savedInstanceState: Bundle?) {
         tvResult = findViewById<TextView>(R.id.tvResult)
+        tvResult.text = if (savedInstanceState != null)
+            savedInstanceState.getString(getString(R.string.key), "0") else "0"
         btnToast = findViewById<Button>(R.id.btnToast)
         btnCount = findViewById<Button>(R.id.btnCount)
         btnRandom = findViewById<Button>(R.id.btnRandom)
